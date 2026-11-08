@@ -39,7 +39,7 @@ Dự án thiết kế và chế tạo hoàn chỉnh hệ thống máy bay không
 * **Power System:** 1x `18650 Li-ion Battery` + `5V Boost Converter Module`
 
 ### 3. 3D Printed Frame (Khung máy in 3D)
-* File thiết kế khung cơ khí nằm trong thư mục phần cứng: **`Fors3_reinforced.stl`**.
+* File thiết kế khung cơ khí nằm trong thư mục phần cứng: **`Fors3-RC.stl`**.
 * Khung máy được tinh chỉnh gia cố thêm các góc lượn chịu lực (structural fillets) ở chân 4 cánh tay đòn để chống gãy vỡ khi va chạm và tối ưu hóa vị trí đặt bo mạch giúp cân bằng trọng tâm (CG).
 <img width="499" height="506" alt="image" src="https://github.com/user-attachments/assets/977682d5-accd-42d8-96c4-12228502cc00" />
 
