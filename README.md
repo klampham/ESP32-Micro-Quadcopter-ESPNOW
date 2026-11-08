@@ -116,3 +116,8 @@ set thr_mid = 60
 set thr_expo = 50
 
 save
+## 🙏 Credits & Acknowledgments (Nguồn tham khảo & Ghi công)
+Dự án được nghiên cứu, phát triển và tối ưu hóa dựa trên các nền tảng mã nguồn mở và tài liệu kỹ thuật sau:
+* **Flight Controller Firmware:** [esp-fc](https://github.com/rtlopez/esp-fc) by **rtlopez** — Nền tảng firmware điều khiển bay tối ưu hóa dành riêng cho vi điều khiển ESP32.
+* **Ground Control Station:** [Betaflight Configurator](https://github.com/betaflight/betaflight-configurator) — Giao diện trạm mặt đất dùng để cấu hình tham số, hiệu chuẩn cảm biến và giám sát dữ liệu thời gian thực qua giao thức MSP.
+* **Hardware & Architecture Inspiration:** [LegendofKARTIS/esp32-drone](https://github.com/LegendofKARTIS/esp32-drone) by **Kartis Legend** — Tham khảo sơ đồ khối mạch kích MOSFET và cấu trúc truyền thông không dây ESP-NOW giữa Tay cầm và Drone.
