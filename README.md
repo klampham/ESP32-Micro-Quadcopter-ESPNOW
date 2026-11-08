@@ -20,6 +20,8 @@ Dự án thiết kế và chế tạo hoàn chỉnh hệ thống máy bay không
 ## 🛠️ Hardware & 3D Frame (Phần cứng & Khung cơ khí)
 
 ### 1. Drone (Flight Controller Node)
+<img width="1376" height="768" alt="image" src="https://github.com/user-attachments/assets/fcc8d2b8-0f70-4762-a042-f2e274bebabe" />
+
 * **MCU:** `ESP32-S3-WROOM-1` (Dual-Core LX7 @ 240MHz)
 * **IMU Sensor:** `GY-521 MPU6050` (6-DOF Gyro + Accelerometer, I2C Fast-Mode 400kHz)
 * **Actuators:** 4x `8520 Coreless Brushed Motors` (3.7V) + `55mm Propellers` (2x CW, 2x CCW)
@@ -30,6 +32,8 @@ Dự án thiết kế và chế tạo hoàn chỉnh hệ thống máy bay không
 * **Power System:** `1S LiPo Battery` (3.7V, 800mAh, $\ge 25\text{C}$) + `5V Boost Converter` + `1000µF` Capacitor + RC Reset Filter (`10kΩ` + `100nF` Ceramic Capacitor).
 
 ### 2. Transmitter (TX Controller Node)
+<img width="1376" height="768" alt="image" src="https://github.com/user-attachments/assets/f6725803-75eb-4623-b34c-ba069cc03b17" />
+
 * **MCU:** `ESP32 DevKit V1` (ESP-WROOM-32)
 * **Inputs:** 2x Dual-axis Analog Joystick Modules + 2x Tactile Push Buttons (`Arm/Disarm` & `Flight Mode`)
 * **Power System:** 1x `18650 Li-ion Battery` + `5V Boost Converter Module`
@@ -37,6 +41,9 @@ Dự án thiết kế và chế tạo hoàn chỉnh hệ thống máy bay không
 ### 3. 3D Printed Frame (Khung máy in 3D)
 * File thiết kế khung cơ khí nằm trong thư mục phần cứng: **`Fors3_reinforced.stl`**.
 * Khung máy được tinh chỉnh gia cố thêm các góc lượn chịu lực (structural fillets) ở chân 4 cánh tay đòn để chống gãy vỡ khi va chạm và tối ưu hóa vị trí đặt bo mạch giúp cân bằng trọng tâm (CG).
+<img width="499" height="506" alt="image" src="https://github.com/user-attachments/assets/977682d5-accd-42d8-96c4-12228502cc00" />
+
+<img width="510" height="509" alt="image" src="https://github.com/user-attachments/assets/1ff113cc-6c19-4508-9a97-5e2d590b1ed7" />
 
 ---
 
@@ -77,6 +84,8 @@ Dự án thiết kế và chế tạo hoàn chỉnh hệ thống máy bay không
 ### 1. Công cụ cần thiết (Requirements)
 * **[VS Code](https://code.visualstudio.com/)** + Extension **[PlatformIO IDE](https://platformio.org/)** (Dùng để biên dịch và nạp firmware `esp-fc` cho mạch bay ESP32-S3, và tay điều khiển).
 * **[Betaflight Configurator (v10.10.0)](https://github.com/betaflight/betaflight-configurator/releases)** (Giao diện trạm mặt đất để hiệu chuẩn gia tốc kế, kiểm tra chiều động cơ và tinh chỉnh PID).
+* <img width="1919" height="1030" alt="image" src="https://github.com/user-attachments/assets/91ba9521-5c36-4692-83e9-2565e73699d6" />
+
 
 ### 2. Các bước nạp code và Cài đặt
 1. **Nạp Firmware cho Drone:** Mở thư mục `Firmware Flight Controller` trong VS Code (PlatformIO), kết nối ESP32-S3 qua cổng USB và nhấn **Upload**.
