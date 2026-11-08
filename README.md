@@ -5,9 +5,8 @@ Drone with an **ESP32-S3-WROOM-1** board acting as both **Flight Controller + Re
 > **Course Project:** Introduction to Mechatronics (Nhập môn Cơ điện tử)  
 > **University:** University of Engineering and Technology - VNU Hanoi (UET - VNU)  
 > **Author:** Phạm Khánh Lâm — **Student ID:** `24021145` (Contribution: 100%)
-<p align="center">
-  <img src="banner_micro_quadcopter.jpg" alt="Micro Quadcopter Banner" width="100%">
-</p>
+<img width="1376" height="768" alt="image" src="https://github.com/user-attachments/assets/45cb0fbb-d394-4d40-b3e2-c1153bcf069a" />
+
 ---
 
 ## 📌 Project Overview (Tổng quan dự án)
@@ -49,12 +48,12 @@ Dự án thiết kế và chế tạo hoàn chỉnh hệ thống máy bay không
 
 | Component / Signal | ESP32-S3 Pin | Notes / Description |
 | :--- | :---: | :--- |
-| **Motor 1 (Rear Right - CW)** | `GPIO 7` | High-frequency PWM (16kHz) -> AO3400A Gate (+ 10kΩ to GND) |
-| **Motor 2 (Front Right - CCW)** | `GPIO 35` | High-frequency PWM (16kHz) -> AO3400A Gate (+ 10kΩ to GND) |
-| **Motor 3 (Rear Left - CCW)** | `GPIO 12` | High-frequency PWM (16kHz) -> AO3400A Gate (+ 10kΩ to GND) |
-| **Motor 4 (Front Left - CW)** | `GPIO 11` | High-frequency PWM (16kHz) -> AO3400A Gate (+ 100nF/10kΩ) |
-| **MPU6050 SCL** | `GPIO 20` | I2C Clock (400kHz Fast-Mode) |
-| **MPU6050 SDA** | `GPIO 21` | I2C Data |
+| **Motor 1 (Rear Right - CCW)** | `GPIO 7` | High-frequency PWM (8kHz) -> AO3400A Gate (+ 10kΩ to GND) |
+| **Motor 2 (Front Right - CW)** | `GPIO 35` | High-frequency PWM (8kHz) -> AO3400A Gate (+ 10kΩ to GND) |
+| **Motor 3 (Rear Left - CW)** | `GPIO 12` | High-frequency PWM (8kHz) -> AO3400A Gate (+ 10kΩ to GND) |
+| **Motor 4 (Front Left - CCW)** | `GPIO 11` | High-frequency PWM (8kHz) -> AO3400A Gate (+ 100nF/10kΩ) |
+| **MPU6050 SCL** | `GPIO 10` | I2C Clock (400kHz Fast-Mode) |
+| **MPU6050 SDA** | `GPIO 9` | I2C Data |
 | **MPU6050 VCC & GND** | `3V3` & `GND` | Clean 3.3V regulated supply |
 | **RC Reset Filter** | `RST` | `10kΩ` pull-up to `3V3` + `100nF` capacitor to `GND` |
 | **5V Boost Converter Out** | `5V` & `GND` | Decoupled with `1000µF` electrolytic capacitor |
@@ -76,13 +75,12 @@ Dự án thiết kế và chế tạo hoàn chỉnh hệ thống máy bay không
 ## 💻 Software & Setup (Phần mềm & Cài đặt)
 
 ### 1. Công cụ cần thiết (Requirements)
-* **[VS Code](https://code.visualstudio.com/)** + Extension **[PlatformIO IDE](https://platformio.org/)** (Dùng để biên dịch và nạp firmware `esp-fc` cho mạch bay ESP32-S3).
-* **[Arduino IDE](https://www.arduino.cc/en/software)** (Hoặc PlatformIO để nạp code đọc ADC và phát ESP-NOW cho tay cầm ESP32 DevKit V1).
+* **[VS Code](https://code.visualstudio.com/)** + Extension **[PlatformIO IDE](https://platformio.org/)** (Dùng để biên dịch và nạp firmware `esp-fc` cho mạch bay ESP32-S3, và tay điều khiển).
 * **[Betaflight Configurator (v10.10.0)](https://github.com/betaflight/betaflight-configurator/releases)** (Giao diện trạm mặt đất để hiệu chuẩn gia tốc kế, kiểm tra chiều động cơ và tinh chỉnh PID).
 
 ### 2. Các bước nạp code và Cài đặt
-1. **Nạp Firmware cho Drone:** Mở thư mục `01_Flight_Controller_Firmware` trong VS Code (PlatformIO), kết nối ESP32-S3 qua cổng USB và nhấn **Upload**.
-2. **Nạp Firmware cho Tay cầm:** Mở code trong `02_Transmitter_Firmware`, cập nhật địa chỉ MAC của Drone (nếu dùng Unicast) và nạp vào board ESP32 DevKit V1.
+1. **Nạp Firmware cho Drone:** Mở thư mục `Firmware Flight Controller` trong VS Code (PlatformIO), kết nối ESP32-S3 qua cổng USB và nhấn **Upload**.
+2. **Nạp Firmware cho Tay cầm:** Mở code trong `For-Transmitter-ESP32`, cập nhật địa chỉ MAC của Drone (nếu dùng Unicast) và nạp vào board ESP32 DevKit V1.
 3. **Cấu hình trên Betaflight Configurator:**
    * Cắm cáp USB từ ESP32-S3 vào máy tính, nhấn **Connect**.
    * Đặt drone trên mặt phẳng ngang, vào tab **Setup** nhấn **Calibrate Accelerometer**.
